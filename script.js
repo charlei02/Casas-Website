@@ -1,7 +1,7 @@
 // script.js
 
 // Fetch data from server and populate into HTML
-fetch('http://localhost:3000https://casas-webservice.onrender.com/')
+fetch('https://casas-webservice.onrender.com/')
     .then(response => response.json())
     .then(data => {
         document.getElementById('personalInfo').innerHTML = `
