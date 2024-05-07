@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:darkblue ;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    color: rgb(10, 10, 9);
+    margin-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px; 
+    border-bottom: 1px solid black; 
+    background-color: lightgreen;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    margin-right: 50px;
+    border-radius: 50%;
+
+}
+
+.info {
+    margin-left: 20px;
+    padding: 10px; /* Adjust this value for your desired spacing */
+}
+
+.info p {
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.info ul {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.info ul li {
+    list-style-type: none;
+    margin-left: 20px;
+    padding: 0;
+}
+
+
+.container{
+    width: 850px;
+    height: 100vh;
+    padding: 0px;
+    border: 3px solid black;
+    display:flex;
+    grid-template-columns: 1fr 2fr;
+    
+    
+    
+    
+}
+.sidebar-l{
+    background-color:darkgray;
+    height: 100vh;
+    width: 850px;
+
+   
+   
+}
+.sidebar-l h2 {
+    color: rgb(5, 4, 4); 
+    margin-bottom: 10px; 
+    border-bottom: 1px solid black; 
+}
+.sidebar-R{
+   height:100vh;
+   background-color: white;
+
+   
+}
+.profile .imgbx img{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
