@@ -24,11 +24,7 @@ fetch('https://casas-webservice.onrender.com/')
             <p><strong>Institution:</strong> ${data.Education[0]. Institution}</p>
             <p><strong>Year:</strong> ${data.Education[0].Year}</p>
         `;
-        document.getElementById('education2').innerHTML = `
-        <p><strong>Degree:</strong> ${data.Education[0].Degree}</p>
-        <p><strong>Institution:</strong> ${data.Education[0]. Institution}</p>
-        <p><strong>Year:</strong> ${data.Education[0].Year}</p>
-    `;
+        
         document.getElementById('personalReference').innerHTML = `
             <p><strong>Name:</strong> ${data.Personal_Reference[0].Name}</p>
             <p><strong>Contact:</strong> ${data.Personal_Reference[0].Contact}</p>
