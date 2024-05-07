@@ -67,6 +67,7 @@ h2 {
     background-color:darkgray;
     height: 100vh;
     width: 850px;
+    padding: 5px;
 
    
    
@@ -78,7 +79,8 @@ h2 {
 }
 .sidebar-R{
    height:100vh;
-   background-color: white;
+   background-color: white; 
+   padding: 5px;
 
    
 }
@@ -88,5 +90,6 @@ h2 {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
+    margin-left:50px;
     
 }
