@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     fetch('https://casas-webservice.onrender.com')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             displayPersonalInfo(data.Personal_Information);
             displayAboutMe(data.About_Me);
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h2>Skills</h2>
             <ul>
                 ${skillsArray.map(skills => `
-                    ${skills.Languages.map(lang => <li>${lang}</li>).join('')}
+                    ${skills.Languages.map(lang => `<li>${lang}</li>`).join('')}
                 `).join('')}
             </ul>
         `;
