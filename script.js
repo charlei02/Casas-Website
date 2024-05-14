@@ -1,18 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://casas-webservice.onrender.com')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
+    fetch('https://webserver-1-g5ti.onrender.com/')
+        .then(response => response.json())
         .then(data => {
-            displayPersonalInfo(data.Personal_Information);
-            displayAboutMe(data.About_Me);
+            displayPersonalInfo(data.personalInfo);
+            displayAboutMe(data.aboutMe);
             displaySkills(data.Skills);
-            displayEducation(data.Education);
-            displayWorkExperience(data.Work_Experience);
-            displayPersonalReferences(data.Personal_References);
+            displayEducation(data.education);
+            displayWorkExperience(data.workExperience);
+            displayPersonalReferences(data.personalReference);
         })
         .catch(error => console.error('Error fetching data:', error));
 
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h2>Skills</h2>
             <ul>
                 ${skillsArray.map(skills => `
-                    ${skills.Languages.map(lang => `<li>${lang}</li>`).join('')}
+                    ${skills.Languages.map(lang => <li>${lang}</li>).join('')}
                 `).join('')}
             </ul>
         `;
