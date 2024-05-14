@@ -53,7 +53,7 @@ h2 {
 
 .container{
     width: 850px;
-    height: 100vh;
+    height: 120vh;
     padding: 0px;
     border: 3px solid black;
     display:flex;
@@ -65,7 +65,7 @@ h2 {
 }
 .sidebar-l{
     background-color:darkgray;
-    height: 100vh;
+    height: 120vh;
     width: 850px;
     padding: 5px;
 
@@ -78,7 +78,7 @@ h2 {
     border-bottom: 1px solid black; 
 }
 .sidebar-R{
-   height:100vh;
+   height:120vh;
    background-color: white; 
    padding: 5px;
 
