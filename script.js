@@ -1,34 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://webserver-1-g5ti.onrender.com/')
+    fetch('https://casas-webservice.onrender.com')
         .then(response => response.json())
         .then(data => {
-            displayPersonalInfo(data.personalInfo);
-            displayAboutMe(data.aboutMe);
+            displayPersonalInfo(data.Personal_Information);
+            displayAboutMe(data.About_me);
             displaySkills(data.Skills);
-            displayEducation(data.education);
-            displayWorkExperience(data.workExperience);
-            displayPersonalReferences(data.personalReference);
+            displayEducation(data.Education);
+            displayWorkExperience(data.Work_Experience);
+            displayPersonalReferences(data.Personal_Reference);
         })
         .catch(error => console.error('Error fetching data:', error));
 
     function displayPersonalInfo(personalInfoArray) {
-        const personalInfoDiv = document.getElementById('personalInfo');
+        const personalInfoDiv = document.getElementById('personal-info');
         personalInfoDiv.innerHTML = `
-            <h2>Personal Information</h2>
             ${personalInfoArray.map(personalInfo => `
                 <p>Name: ${personalInfo.Name}</p>
                 <p>Birthdate: ${personalInfo.Birthdate}</p>
                 <p>Gender: ${personalInfo.Gender}</p>
-                <p>Contact No: ${personalInfo.Contact_No}</p>
+                <p>Contact No: ${personalInfo.ContactNo}</p>
                 <p>Address: ${personalInfo.Address}</p>
             `).join('')}
         `;
     }
 
     function displayAboutMe(aboutMeArray) {
-        const aboutMeDiv = document.getElementById('aboutMe');
+        const aboutMeDiv = document.getElementById('about-me');
         aboutMeDiv.innerHTML = `
-            <h2>About Me</h2>
             ${aboutMeArray.map(aboutMe => `
                 <p>${aboutMe.Description}</p>
             `).join('')}
@@ -38,10 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function displaySkills(skillsArray) {
         const skillsDiv = document.getElementById('skills');
         skillsDiv.innerHTML = `
-            <h2>Skills</h2>
             <ul>
                 ${skillsArray.map(skills => `
-                    ${skills.Languages.map(lang => <li>${lang}</li>).join('')}
+                    ${skills.Language.split(',').map(lang => `<li>${lang}</li>`).join('')}
                 `).join('')}
             </ul>
         `;
@@ -50,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayEducation(educationArray) {
         const educationDiv = document.getElementById('education');
         educationDiv.innerHTML = `
-            <h2>Education</h2>
             <ul>
                 ${educationArray.map(education => `
                     <li>
@@ -64,16 +60,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayWorkExperience(workExperienceArray) {
-        const workExperienceDiv = document.getElementById('workExperience');
+        const workExperienceDiv = document.getElementById('work-experience');
         workExperienceDiv.innerHTML = `
-            <h2>Work Experience</h2>
             <ul>
                 ${workExperienceArray.map(workExperience => `
                     <li>
                         <p>Company: ${workExperience.Company}</p>
                         <p>Job Title: ${workExperience.Job_Title}</p>
                         <p>Start Date: ${workExperience.Start_Date}</p>
-                        <p>End Date: ${workExperience.End_Date}</p>
+                        <p>End Date: ${workExperience.End_Date ? workExperience.End_Date : 'Present'}</p>
                     </li>
                 `).join('')}
             </ul>
@@ -81,14 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayPersonalReferences(personalReferencesArray) {
-        const personalReferencesDiv = document.getElementById('personalReference');
+        const personalReferencesDiv = document.getElementById('personal-references');
         personalReferencesDiv.innerHTML = `
-            <h2>Personal References</h2>
             <ul>
                 ${personalReferencesArray.map(personalReferences => `
                     <li>
                         <p>Name: ${personalReferences.Name}</p>
-                        <p>Contact No: ${personalReferences.Contact_No}</p>
+                        <p>Contact No: ${personalReferences.Contact}</p>
                         <p>Relationship: ${personalReferences.Relationship}</p>
                     </li>
                 `).join('')}
